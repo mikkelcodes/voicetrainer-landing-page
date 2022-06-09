@@ -2,25 +2,21 @@ import { graphql } from "gatsby"
 import "./hero.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
-import {
-  Box,
-  Button,
-  ButtonList,
-  Container,
-  Flex,
-  Heading,
-  Kicker,
-  Section,
-  Subhead,
-  Text,
-} from "./ui"
+import { Box, Container, Flex, Heading, Kicker, Section, Text } from "./ui"
 import MailchimpForm from "./MailChimpForm"
 
 export default function Hero(props) {
   return (
-    <Section>
+    <Section
+      style={{
+        marginTop: "-95px",
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
       <Container>
-        <Flex gap={4} variant="responsive">
+        <Flex gap={4} variant="responsive" className="flex-container">
           <Box
             width="half"
             justifyContent="center"
@@ -32,12 +28,11 @@ export default function Hero(props) {
           >
             <Box
               style={{
-                display: "inline",
                 maxWidth: "450px",
                 padding: "20px",
                 borderRadius: "15px",
               }}
-              className="card-shadow"
+              className="card-shadow image-container"
             >
               {props.image && (
                 <GatsbyImage
@@ -53,10 +48,10 @@ export default function Hero(props) {
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               Shaping the future of voice training, with technology
             </Heading>
-            <Text style={{ marginBottom: "23px", fontSize: "20px" }} as="p">
+            <Text style={{ marginBottom: "50px", fontSize: "20px" }} as="p">
               We are making a platform tailored to{" "}
-              <strong>enhance collaboration </strong>
-              between voice teachers and students.
+              <strong>better collaboration </strong>
+              between voice teachers and students 🧑‍🏫🤝👩‍🎓
             </Text>
             <MailchimpForm />
           </Box>

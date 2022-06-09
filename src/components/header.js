@@ -88,24 +88,13 @@ export default function Header() {
               Voicetrainer
             </Text>
           </NavLink>
-          {/* <nav>
-            <FlexList gap={4}>
-              {navItems &&
-                navItems.map((navItem) => (
-                  <li key={navItem.id}>
-                    {navItem.navItemType === "Group" ? (
-                      <NavItemGroup
-                        name={navItem.name}
-                        navItems={navItem.navItems}
-                      />
-                    ) : (
-                      <NavLink to={navItem.href}>{navItem.text}</NavLink>
-                    )}
-                  </li>
-                ))}
-            </FlexList>
-          </nav> */}
-          <div>{cta && <Button to={cta.href}>Get in Touch!</Button>}</div>
+          <div>
+            {cta && (
+              <Button to="mailto:operations@voicetrainer.io">
+                Get in Touch!
+              </Button>
+            )}
+          </div>
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>

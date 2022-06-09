@@ -27,7 +27,7 @@ const CustomForm = ({ status, message, onValidated }) => {
   return (
     <form className="" onSubmit={(e) => handleSubmit(e)}>
       <Subhead>
-        {status === "success" ? "Success!" : "Get notified when we launch!"}
+        {status === "success" ? "Success!" : "Get notified when we launch! 🚀"}
       </Subhead>
 
       {status === "sending" && (
@@ -55,6 +55,7 @@ const CustomForm = ({ status, message, onValidated }) => {
             }}
           >
             <input
+              className="input"
               type="email"
               label="Email"
               value={email}
