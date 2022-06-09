@@ -11,6 +11,7 @@ import {
   InteractiveIcon,
   Nudge,
   VisuallyHidden,
+  Text,
 } from "./ui"
 import {
   mobileNavOverlay,
@@ -77,9 +78,17 @@ export default function Header() {
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
-            <BrandLogo />
+            <Text
+              style={{
+                fontSize: "24px",
+                letterSpacing: "-0.5px",
+                fontWeight: "700",
+              }}
+            >
+              Voicetrainer
+            </Text>
           </NavLink>
-          <nav>
+          {/* <nav>
             <FlexList gap={4}>
               {navItems &&
                 navItems.map((navItem) => (
@@ -95,8 +104,8 @@ export default function Header() {
                   </li>
                 ))}
             </FlexList>
-          </nav>
-          <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div>
+          </nav> */}
+          <div>{cta && <Button to={cta.href}>Get in Touch!</Button>}</div>
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>

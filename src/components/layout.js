@@ -10,7 +10,6 @@ const Layout = (props) => {
       <Head {...props} />
       <Header />
       {props.children}
-      <Footer />
     </>
   )
 }
