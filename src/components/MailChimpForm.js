@@ -6,19 +6,21 @@ const CustomForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState("")
 
   const handleSubmit = (e) => {
+    console.log("fiowejf")
     e.preventDefault()
     email &&
       email.indexOf("@") > -1 &&
       onValidated({
         EMAIL: email,
       })
+    console.log("somehthing")
   }
 
   useEffect(() => {
     if (status === "success") clearFields()
   }, [status])
 
-  const clearFields = () => {
+  const clearFields = (e) => {
     setEmail("")
   }
 
@@ -53,12 +55,11 @@ const CustomForm = ({ status, message, onValidated }) => {
             }}
           >
             <input
-              type="text"
-              className="input"
+              type="email"
               label="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              isRequired
+              required
               placeholder="Enter your email address"
               style={{
                 borderRadius: "10px",
@@ -76,8 +77,9 @@ const CustomForm = ({ status, message, onValidated }) => {
               <Button
                 label="subscribe"
                 type="submit"
+                onClick={(e) => handleSubmit(e)}
                 style={{ width: "108px" }}
-                formValues={[email]}
+                formvalues={[email]}
               >
                 Notify Me
               </Button>
