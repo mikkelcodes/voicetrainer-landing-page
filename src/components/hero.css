@@ -7,3 +7,84 @@
   -moz-box-shadow: 30px 23px 101px -6px rgba(0, 0, 0, 0.24);
   box-shadow: 30px 23px 101px -6px rgba(0, 0, 0, 0.14);
 }
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  margin-top: -95px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.text-content {
+  padding-left: 60px;
+}
+
+.text-content p {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.carousel button,
+.carousel p {
+  display: none !important;
+}
+
+.carousel li {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container {
+  transition: 0.7s ease opacity;
+}
+
+.carousel ul {
+  transition-duration: 1200ms !important;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.carousel .control-dots {
+  position: relative;
+  transform: translateY(40px) !important;
+  background: blue;
+  z-index: 40;
+}
+
+@media only screen and (max-width: 1024px) {
+  .flex-container {
+    justify-content: center;
+  }
+
+  .text-content {
+    width: 70%;
+    padding-left: 0px;
+  }
+
+  .image-wrapper {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .text-content {
+    width: 100%;
+  }
+  .text-content p {
+    font-size: 18px;
+  }
+  .text-content h3 {
+    font-size: 30px;
+  }
+}

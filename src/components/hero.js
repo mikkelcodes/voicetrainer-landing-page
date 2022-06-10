@@ -1,49 +1,81 @@
 import { graphql } from "gatsby"
 import "./hero.css"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import * as React from "react"
-import { Box, Container, Flex, Heading, Kicker, Section, Text } from "./ui"
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import React, { useState } from "react"
+import { Box, Container, Heading, Kicker, Section, Text } from "./ui"
 import MailchimpForm from "./MailChimpForm"
+import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
+import { Carousel } from "react-responsive-carousel"
+
+const images = ["./session.png", "./sketch.png"]
 
 export default function Hero(props) {
+  const [currSlide, setCurrSlide] = useState(0)
   return (
-    <Section
-      style={{
-        marginTop: "-95px",
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
+    <Section className="container">
       <Container>
-        <Flex gap={4} variant="responsive" className="flex-container">
+        <Box gap={4} variant="responsive" className="flex-container">
           <Box
+            className="image-wrapper"
             width="half"
             justifyContent="center"
-            display="flex"
             style={{
-              display: "flex",
               justifyContent: "center",
             }}
           >
-            <Box
-              style={{
-                maxWidth: "450px",
-                padding: "20px",
-                borderRadius: "15px",
-              }}
-              className="card-shadow image-container"
+            <Carousel
+              autoPlay
+              infiniteLoop
+              className="carousel"
+              interval={4000}
+              onChange={(index) => setCurrSlide(index)}
             >
-              {props.image && (
-                <GatsbyImage
-                  alt={props.image.alt}
-                  image={getImage(props.image.gatsbyImageData)}
-                  style={{ maxHeight: "500px", maxWidth: "400px" }}
+              <Box
+                style={{
+                  overflow: "hidden",
+                }}
+                className={`image-container ${
+                  currSlide === 0 ? "show" : "hide"
+                }`}
+              >
+                <StaticImage
+                  src="./session.png"
+                  style={{ borderRadius: "20px" }}
                 />
-              )}
-            </Box>
+              </Box>
+              <Box
+                style={{
+                  overflow: "hidden",
+                }}
+                className={`image-container ${
+                  currSlide === 1 ? "show" : "hide"
+                }`}
+              >
+                <StaticImage
+                  src="./sketch.png"
+                  style={{ borderRadius: "20px" }}
+                />
+              </Box>
+              <Box
+                style={{
+                  overflow: "hidden",
+                }}
+                className={`image-container ${
+                  currSlide === 2 ? "show" : "hide"
+                }`}
+              >
+                <StaticImage
+                  src="./timeline.png"
+                  style={{ borderRadius: "20px" }}
+                />
+              </Box>
+
+              <Text color="black" as="h3" style={{ fontSize: "32px" }}>
+                And much more...
+              </Text>
+            </Carousel>
           </Box>
-          <Box width="half">
+          <Box className="text-content">
             <Heading as="h1">
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               Shaping the future of voice training, with technology
@@ -55,7 +87,7 @@ export default function Hero(props) {
             </Text>
             <MailchimpForm />
           </Box>
-        </Flex>
+        </Box>
       </Container>
     </Section>
   )

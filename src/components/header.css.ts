@@ -2,39 +2,6 @@ import { style, styleVariants } from "@vanilla-extract/css"
 import { theme } from "../theme.css"
 import { media } from "./ui.css"
 
-export const desktopHeaderNavWrapper = style({
-  position: "relative",
-  zIndex: 1,
-  display: "none",
-  "@media": {
-    [media.small]: {
-      display: "block",
-      paddingTop: theme.space[4],
-    },
-  },
-})
-
-const mobileHeaderNavWrapperBase = style({
-  display: "block",
-  position: "relative",
-  paddingTop: theme.space[3],
-  "@media": {
-    [media.small]: {
-      display: "none",
-    },
-  },
-})
-
-export const mobileHeaderNavWrapper = styleVariants({
-  open: [
-    mobileHeaderNavWrapperBase,
-    {
-      background: theme.colors.primary,
-    },
-  ],
-  closed: [mobileHeaderNavWrapperBase],
-})
-
 export const mobileNavSVGColorWrapper = styleVariants({
   primary: [{ color: theme.colors.primary }],
   reversed: [{ color: theme.colors.background }],
