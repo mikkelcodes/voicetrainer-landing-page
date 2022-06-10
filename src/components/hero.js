@@ -81,8 +81,8 @@ export default function Hero(props) {
               Shaping the future of voice training, with technology
             </Heading>
             <Text style={{ marginBottom: "50px", fontSize: "20px" }} as="p">
-              We are making a platform tailored to{" "}
-              <strong>better collaboration </strong>
+              Voicetrainer is a platform tailored to enable{" "}
+              <strong>more effective collaboration </strong>
               between voice teachers and students 🧑‍🏫🤝👩‍🎓
             </Text>
             <MailchimpForm />
