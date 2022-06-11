@@ -43,7 +43,10 @@ const CustomForm = ({ status, message, onValidated }) => {
       {status === "success" && (
         <div
           className="mc__alert mc__alert--success"
-          dangerouslySetInnerHTML={{ __html: message }}
+          dangerouslySetInnerHTML={{
+            __html:
+              "Thanks for signing up. We are happy to have you on board.",
+          }}
         />
       )}
 
