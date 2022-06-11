@@ -28,7 +28,7 @@ const CustomForm = ({ status, message, onValidated }) => {
   return (
     <form className="" onSubmit={(e) => handleSubmit(e)}>
       <h3 className={styles.signUpText}>
-        {status === "success" ? "Success!" : "Get notified when we launch! 🚀"}
+        {status === "success" ? "Success! 🙏" : "Get notified when we launch! 🚀"}
       </h3>
 
       {status === "sending" && (
