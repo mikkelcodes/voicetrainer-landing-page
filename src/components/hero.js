@@ -59,7 +59,7 @@ export default function Hero(props) {
             {props.kicker && <Kicker>{props.kicker}</Kicker>}
             Shaping the future of voice training, with technology
           </h1>
-          <Text style={{ marginBottom: "10px", marginTop: "30px" }} as="p">
+          <Text style={{ marginBottom: "10px", marginTop: "10px" }} as="p">
             Voicetrainer is a web app that opens up new possibilities for
             collaboration between voice teachers and their students 🧑‍🏫🤝👩‍🎓
           </Text>
