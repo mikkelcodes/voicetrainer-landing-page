@@ -21,10 +21,18 @@
 }
 
 .textContainer h1 {
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 48px;
+  line-height: 52px;
   margin-top: 0;
   margin-bottom: 30px;
+}
+
+.textContainer h3 {
+  font-size: 26px;
+  line-height: 40px;
+  margin-top: 0;
+  margin-bottom: 0px;
+  font-weight: 400;
 }
 
 .textContainer p {
@@ -37,6 +45,11 @@
   .textContainer h1 {
     font-size: 40px;
     line-height: 48px;
+  }
+
+  .textContainer h3 {
+    font-size: 22px;
+    line-height: 28px;
   }
 
   .textContainer p {
@@ -63,6 +76,11 @@
 }
 
 @media only screen and (max-width: 640px) {
+  .textContainer h3 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
   .heroSection {
     margin-top: 40px;
     display: block;
