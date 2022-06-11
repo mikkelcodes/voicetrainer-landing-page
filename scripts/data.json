@@ -6297,13 +6297,6 @@
           }
         }
       },
-      "fields": {
-        "title": {
-          "en-US": "Gatsby Contentful Homepage Starter"
-        },
-        "description": {
-          "en-US": "A Gatsby Starter for building a homepage with Contentful"
-        },
         "image": {
           "en-US": {
             "sys": {

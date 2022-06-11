@@ -6,7 +6,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://gatsbycontentfulhomepage.gatsbyjs.io/",
+    siteUrl: "https://voicetrainer.io",
     title: "Voicetrainer",
     author: `Mikkel Klokkerud`,
     description: "A platform for voice teachers and students",
@@ -35,7 +35,7 @@ module.exports = {
         // These can be imported once ESM support lands
         background_color: "#ffe491",
         theme_color: "#004ca3",
-        icon: "src/images/favicon-32x32.png",
+        icon: "src/images/favicon-vt-graph.png",
       },
     },
   ],

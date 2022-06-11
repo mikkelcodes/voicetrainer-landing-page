@@ -9,7 +9,7 @@ export default function Head({ title, description, image }) {
       }}
     >
       <meta charSet="utf-8" />
-      <title>{title}</title>
+      <title>Voicetrainer</title>
       {description && (
         <meta
           name="description"
@@ -17,12 +17,9 @@ export default function Head({ title, description, image }) {
           content={description}
         />
       )}
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content="Voicetrainer" />
       {image && <meta property="og:image" content={image.url} />}
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={title} />
-      {description && <meta name="twitter:description" content={description} />}
-      {image && <meta name="twitter:image" content={image.url} />}
     </Helmet>
   )
 }
