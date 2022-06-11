@@ -1,4 +1,4 @@
-.hero-section {
+.heroSection {
   height: 100vh;
   margin-top: -78px;
   display: flex;
@@ -6,7 +6,7 @@
   padding: 0 45px;
 }
 
-.grid-container {
+.gridContainer {
   max-width: 1024px;
   display: grid;
   grid-template-columns: 400px auto;
@@ -16,87 +16,40 @@
 
 /* TEXT */
 
-.text-wrapper {
+.textContainer {
   padding-left: 60px;
 }
 
-.text-wrapper h1 {
+.textContainer h1 {
   font-size: 48px;
   line-height: 52px;
   margin-top: 0;
   margin-bottom: 30px;
 }
 
-.text-wrapper p {
+.textContainer p {
   font-size: 18px;
   margin-bottom: 50px;
   max-width: 550px;
 }
 
-.input::placeholder {
-  color: #2661d7;
-}
-
-/* CAROUSEL */
-
-.carousel button,
-.carousel p {
-  display: none !important;
-}
-
-.carousel li {
-  display: flex;
-  justify-content: center;
-}
-
-.carousel .thumbs-wrapper {
-  display: none;
-}
-
-.card {
-  transition: 0.7s ease opacity;
-}
-
-.carousel ul {
-  transition-duration: 1200ms !important;
-}
-
-.show {
-  opacity: 1;
-}
-
-.hide {
-  opacity: 0;
-}
-
-.carousel .control-dots {
-  position: relative;
-  transform: translateY(40px) !important;
-  background: blue;
-  z-index: 40;
-}
-
 @media only screen and (max-width: 1024px) {
-  .text-wrapper h1 {
+  .textContainer h1 {
     font-size: 40px;
     line-height: 48px;
   }
 
-  .text-wrapper p {
+  .textContainer p {
     max-width: unset;
     font-size: 18px;
   }
 
-  .text-wrapper h3 {
-    font-size: 28px;
-  }
-
-  .grid-container {
+  .gridContainer {
     justify-content: center;
     grid-template-columns: auto;
   }
 
-  .text-wrapper {
+  .textContainer {
     padding-left: 0px;
   }
 
@@ -110,27 +63,60 @@
 }
 
 @media only screen and (max-width: 640px) {
-  .hero-section .flex-container {
-    margin-top: 50px;
-    display: block;
+  .heroSection {
+    margin-top: -55px;
+    display: flex;
+    align-items: center;
   }
 
-  .hero-section {
+  .heroSection .flexContainer {
+    /* display: block; */
+  }
+
+  .heroSection {
     padding: 0 20px;
   }
-  .text-wrapper {
+  .textContainer {
     width: 100%;
   }
 
-  .hero-section h1 {
+  .heroSection h1 {
     font-size: 32px;
     line-height: 40px;
   }
 
-  .text-wrapper p {
+  .textContainer p {
     font-size: 18px;
   }
-  .text-wrapper h3 {
+}
+
+@media only screen and (max-width: 380px) {
+  .heroSection {
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+  }
+
+  .heroSection .flexContainer {
+    /* display: block; */
+  }
+
+  .heroSection {
+    padding: 0 20px;
+  }
+  .textContainer {
+    width: 100%;
+  }
+
+  .heroSection h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .textContainer p {
+    font-size: 18px;
+  }
+  .textContainer h3 {
     font-size: 30px;
   }
 }

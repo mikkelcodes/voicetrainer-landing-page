@@ -1,0 +1,35 @@
+.control-dots {
+  position: relative;
+  transform: translateY(40px) !important;
+  z-index: 40;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
+.carousel button,
+.carousel p {
+  display: none !important;
+}
+
+.carousel li {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel .thumbs-wrapper {
+  display: none;
+}
+
+.carousel .card {
+  transition: 0.7s ease opacity;
+  overflow: hidden;
+}
+
+.carousel ul {
+  transition-duration: 1200ms !important;
+}

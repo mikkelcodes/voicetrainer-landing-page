@@ -1,22 +1,23 @@
 import { graphql } from "gatsby"
-import "./hero.css"
+import * as styles from "./hero.module.css"
 import { StaticImage } from "gatsby-plugin-image"
 import React, { useState } from "react"
 import { Box, Heading, Kicker, Text } from "./ui"
 import MailchimpForm from "./MailChimpForm"
 import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
 import { Carousel } from "react-responsive-carousel"
+import "./carousel.css"
 
 export default function Hero(props) {
   const [currSlide, setCurrSlide] = useState(0)
   return (
-    <section className="hero-section">
-      <div className="grid-container">
-        <div className="carousel-wrapper">
+    <section className={styles.heroSection}>
+      <div className={styles.gridContainer}>
+        <div className={styles.carouselContainer}>
           <Carousel
             autoPlay
             infiniteLoop
-            className="carousel"
+            className={styles.carousel}
             interval={4000}
             onChange={(index) => setCurrSlide(index)}
           >
@@ -26,23 +27,13 @@ export default function Hero(props) {
                 style={{ borderRadius: "20px" }}
               />
             </div>
-            <Box
-              style={{
-                overflow: "hidden",
-              }}
-              className={`card ${currSlide === 1 ? "show" : "hide"}`}
-            >
+            <Box className={`card ${currSlide === 1 ? "show" : "hide"}`}>
               <StaticImage
                 src="../images/sketch.png"
                 style={{ borderRadius: "20px" }}
               />
             </Box>
-            <Box
-              style={{
-                overflow: "hidden",
-              }}
-              className={`card ${currSlide === 2 ? "show" : "hide"}`}
-            >
+            <Box className={`card ${currSlide === 2 ? "show" : "hide"}`}>
               <StaticImage
                 src="../images/timeline.png"
                 style={{ borderRadius: "20px" }}
@@ -54,12 +45,12 @@ export default function Hero(props) {
             </Text>
           </Carousel>
         </div>
-        <Box className="text-wrapper">
+        <Box className={styles.textContainer}>
           <h1>
             {props.kicker && <Kicker>{props.kicker}</Kicker>}
             Shaping the future of voice training, with technology
           </h1>
-          <Text style={{ marginBottom: "10px", marginTop: "10px" }} as="p">
+          <Text style={{ marginBottom: "20px", marginTop: "10px" }} as="p">
             Voicetrainer is a web app that opens up new possibilities for
             collaboration between voice teachers and their students 🧑‍🏫🤝👩‍🎓
           </Text>

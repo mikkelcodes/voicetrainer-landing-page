@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import MailchimpSubscribe from "react-mailchimp-subscribe"
-import { Box, Button, Subhead } from "./ui"
+import { Box, Button } from "./ui"
+import * as styles from "./mailChimpForm.module.css"
 
 const CustomForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState("")
@@ -26,9 +27,9 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   return (
     <form className="" onSubmit={(e) => handleSubmit(e)}>
-      <Subhead>
+      <h3 className={styles.signUpText}>
         {status === "success" ? "Success!" : "Get notified when we launch! 🚀"}
-      </Subhead>
+      </h3>
 
       {status === "sending" && (
         <div className="mc__alert mc__alert--sending">sending...</div>
@@ -55,7 +56,7 @@ const CustomForm = ({ status, message, onValidated }) => {
             }}
           >
             <input
-              className="input"
+              className={styles.input}
               type="email"
               label="Email"
               value={email}
