@@ -1,33 +1,41 @@
+.hero-section {
+  height: 100vh;
+  margin-top: -78px;
+  display: flex;
+  align-items: center;
+  padding: 0 45px;
+}
+
+.grid-container {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 400px auto;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* TEXT */
+
+.text-wrapper {
+  padding-left: 60px;
+}
+
+.text-wrapper h1 {
+  font-size: 48px;
+  line-height: 52px;
+}
+
+.text-wrapper p {
+  font-size: 20px;
+  margin-bottom: 50px;
+  max-width: 550px;
+}
+
 .input::placeholder {
   color: #2661d7;
 }
 
-.card-shadow {
-  -webkit-box-shadow: 30px 23px 101px -6px rgba(0, 0, 0, 0.24);
-  -moz-box-shadow: 30px 23px 101px -6px rgba(0, 0, 0, 0.24);
-  box-shadow: 30px 23px 101px -6px rgba(0, 0, 0, 0.14);
-}
-
-.flex-container {
-  display: flex;
-  align-items: center;
-}
-
-.container {
-  margin-top: -95px;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-}
-
-.text-content {
-  padding-left: 60px;
-}
-
-.text-content p {
-  font-size: 20px;
-  margin-bottom: 50px;
-}
+/* CAROUSEL */
 
 .carousel button,
 .carousel p {
@@ -39,7 +47,11 @@
   justify-content: center;
 }
 
-.image-container {
+.carousel .thumbs-wrapper {
+  display: none;
+}
+
+.card {
   transition: 0.7s ease opacity;
 }
 
@@ -63,28 +75,60 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .flex-container {
-    justify-content: center;
+  .text-wrapper h1 {
+    font-size: 40px;
+    line-height: 48px;
   }
 
-  .text-content {
-    width: 70%;
+  .text-wrapper p {
+    max-width: unset;
+    font-size: 18px;
+  }
+
+  .text-wrapper h3 {
+    font-size: 28px;
+  }
+
+  .grid-container {
+    justify-content: center;
+    grid-template-columns: auto;
+  }
+
+  .text-wrapper {
     padding-left: 0px;
   }
 
-  .image-wrapper {
+  .carousel {
+    display: none;
+  }
+
+  .card {
     display: none;
   }
 }
 
-@media only screen and (max-width: 740px) {
-  .text-content {
+@media only screen and (max-width: 640px) {
+  .hero-section .flex-container {
+    margin-top: 50px;
+    display: block;
+  }
+
+  .hero-section {
+    padding: 0 20px;
+  }
+  .text-wrapper {
     width: 100%;
   }
-  .text-content p {
+
+  .hero-section h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .text-wrapper p {
     font-size: 18px;
   }
-  .text-content h3 {
+  .text-wrapper h3 {
     font-size: 30px;
   }
 }

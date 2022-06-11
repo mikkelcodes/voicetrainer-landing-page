@@ -1,95 +1,78 @@
 import { graphql } from "gatsby"
 import "./hero.css"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import React, { useState } from "react"
-import { Box, Container, Heading, Kicker, Section, Text } from "./ui"
+import { Box, Heading, Kicker, Text } from "./ui"
 import MailchimpForm from "./MailChimpForm"
 import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
 import { Carousel } from "react-responsive-carousel"
 
-const images = ["./session.png", "./sketch.png"]
-
 export default function Hero(props) {
   const [currSlide, setCurrSlide] = useState(0)
   return (
-    <Section className="container">
-      <Container>
-        <Box gap={4} variant="responsive" className="flex-container">
-          <Box
-            className="image-wrapper"
-            width="half"
-            justifyContent="center"
-            style={{
-              justifyContent: "center",
-            }}
+    <section className="hero-section">
+      <div className="grid-container">
+        <div className="carousel-wrapper">
+          <Carousel
+            autoPlay
+            infiniteLoop
+            className="carousel"
+            interval={4000}
+            onChange={(index) => setCurrSlide(index)}
           >
-            <Carousel
-              autoPlay
-              infiniteLoop
-              className="carousel"
-              interval={4000}
-              onChange={(index) => setCurrSlide(index)}
+            <div className={`card ${currSlide === 0 ? "show" : "hide"}`}>
+              <StaticImage
+                src="../images/session.png"
+                style={{ borderRadius: "20px" }}
+              />
+            </div>
+            <Box
+              style={{
+                overflow: "hidden",
+              }}
+              className={`card ${currSlide === 1 ? "show" : "hide"}`}
             >
-              <Box
-                style={{
-                  overflow: "hidden",
-                }}
-                className={`image-container ${
-                  currSlide === 0 ? "show" : "hide"
-                }`}
-              >
-                <StaticImage
-                  src="./session.png"
-                  style={{ borderRadius: "20px" }}
-                />
-              </Box>
-              <Box
-                style={{
-                  overflow: "hidden",
-                }}
-                className={`image-container ${
-                  currSlide === 1 ? "show" : "hide"
-                }`}
-              >
-                <StaticImage
-                  src="./sketch.png"
-                  style={{ borderRadius: "20px" }}
-                />
-              </Box>
-              <Box
-                style={{
-                  overflow: "hidden",
-                }}
-                className={`image-container ${
-                  currSlide === 2 ? "show" : "hide"
-                }`}
-              >
-                <StaticImage
-                  src="./timeline.png"
-                  style={{ borderRadius: "20px" }}
-                />
-              </Box>
+              <StaticImage
+                src="../images/sketch.png"
+                style={{ borderRadius: "20px" }}
+              />
+            </Box>
+            <Box
+              style={{
+                overflow: "hidden",
+              }}
+              className={`card ${currSlide === 2 ? "show" : "hide"}`}
+            >
+              <StaticImage
+                src="../images/timeline.png"
+                style={{ borderRadius: "20px" }}
+              />
+            </Box>
 
-              <Text color="black" as="h3" style={{ fontSize: "32px" }}>
-                And much more...
-              </Text>
-            </Carousel>
-          </Box>
-          <Box className="text-content">
-            <Heading as="h1">
-              {props.kicker && <Kicker>{props.kicker}</Kicker>}
-              Shaping the future of voice training, with technology
-            </Heading>
-            <Text style={{ marginBottom: "50px", fontSize: "20px" }} as="p">
-              Voicetrainer is a web app tailored to enable{" "}
-              <strong>more effective collaboration </strong>
-              between voice teachers and students 🧑‍🏫🤝👩‍🎓
+            <Text color="black" as="h3" style={{ fontSize: "32px" }}>
+              And much more...
             </Text>
-            <MailchimpForm />
-          </Box>
+          </Carousel>
+        </div>
+        <Box className="text-wrapper">
+          <h1>
+            {props.kicker && <Kicker>{props.kicker}</Kicker>}
+            Shaping the future of voice training, with technology
+          </h1>
+          <Text style={{ marginBottom: "10px", marginTop: "30px" }} as="p">
+            Voicetrainer is a web app that opens up new possibilities for
+            collaboration between voice teachers and their students 🧑‍🏫🤝👩‍🎓
+          </Text>
+          <Text style={{ marginBottom: "30px" }} as="p">
+            Whether you teach in-person or online, our platform will equip{" "}
+            <strong>you and your students</strong> with a set of tools that make
+            daily teaching and voice workouts easy, fun and effective.
+          </Text>
+
+          <MailchimpForm />
         </Box>
-      </Container>
-    </Section>
+      </div>
+    </section>
   )
 }
 
