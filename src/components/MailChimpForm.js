@@ -96,7 +96,7 @@ const CustomForm = ({ status, message, onValidated }) => {
 // for="MERGE0"
 
 const MailchimpForm = (props) => {
-  const url = `https://voicetrainer.us13.list-manage.com/subscribe/post?u=${process.env.MAILCHIMP_U}&id=${process.env.MAILCHIMP_ID}`
+  const url = `https://voicetrainer.us13.list-manage.com/subscribe/post?u=779d1844c1cacc14f06942b65&id=82fe76c785`
 
   return (
     <div className="mc__form-container">
