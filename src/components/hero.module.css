@@ -64,13 +64,9 @@
 
 @media only screen and (max-width: 640px) {
   .heroSection {
-    margin-top: -55px;
-    display: flex;
+    margin-top: 40px;
+    display: block;
     align-items: center;
-  }
-
-  .heroSection .flexContainer {
-    /* display: block; */
   }
 
   .heroSection {
@@ -95,10 +91,6 @@
     margin-top: 0px;
     display: flex;
     align-items: center;
-  }
-
-  .heroSection .flexContainer {
-    /* display: block; */
   }
 
   .heroSection {
