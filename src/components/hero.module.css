@@ -79,7 +79,8 @@
   .textContainer p {
     max-width: unset;
     font-size: 18px;
-    text-align: left;
+    text-align: center;
+    max-width: 530px;
   }
 
   .gridContainer {
@@ -98,7 +99,7 @@
   .mobileCarousel {
     display: block;
     max-width: 340px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 50px auto;
   }
 
   .card {
@@ -132,6 +133,8 @@
 
   .textContainer p {
     font-size: 18px;
+    text-align: left;
+    max-width: unset;
   }
 }
 
