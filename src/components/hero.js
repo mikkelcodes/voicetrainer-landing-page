@@ -48,7 +48,7 @@ export default function Hero(props) {
         <Box className={styles.textContainer}>
           {/* {props.kicker && <Kicker>{props.kicker}</Kicker>} */}
           <h3>Singing teachers, vocal coaches, singers...</h3>
-          <h1>Say hello to your new best friend</h1>
+          <h1>Say hello to your new best friend.</h1>
           <Text style={{ marginBottom: "20px", marginTop: "10px" }} as="p">
             Voicetrainer is a web app that opens up new possibilities for
             collaboration between voice teachers and their students 🧑‍🏫🤝👩‍🎓
