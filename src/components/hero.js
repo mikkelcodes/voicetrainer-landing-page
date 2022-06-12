@@ -2,11 +2,12 @@ import { graphql } from "gatsby"
 import * as styles from "./hero.module.css"
 import { StaticImage } from "gatsby-plugin-image"
 import React, { useState } from "react"
-import { Box, Heading, Kicker, Text } from "./ui"
+import { Box, Text } from "./ui"
 import MailchimpForm from "./MailChimpForm"
 import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
 import { Carousel } from "react-responsive-carousel"
 import "./carousel.css"
+import { style } from "@vanilla-extract/css"
 
 export default function Hero(props) {
   const [currSlide, setCurrSlide] = useState(0)
@@ -14,41 +15,23 @@ export default function Hero(props) {
     <section className={styles.heroSection}>
       <div className={styles.gridContainer}>
         <div className={styles.carouselContainer}>
-          <Carousel
-            autoPlay
-            infiniteLoop
-            className={styles.carousel}
-            interval={4000}
+          <FeatureCarousel
             onChange={(index) => setCurrSlide(index)}
-          >
-            <div className={`card ${currSlide === 0 ? "show" : "hide"}`}>
-              <StaticImage
-                src="../images/session.png"
-                style={{ borderRadius: "20px" }}
-              />
-            </div>
-            <Box className={`card ${currSlide === 1 ? "show" : "hide"}`}>
-              <StaticImage
-                src="../images/sketch.png"
-                style={{ borderRadius: "20px" }}
-              />
-            </Box>
-            <Box className={`card ${currSlide === 2 ? "show" : "hide"}`}>
-              <StaticImage
-                src="../images/timeline.png"
-                style={{ borderRadius: "20px" }}
-              />
-            </Box>
-
-            <Text color="black" as="h3" style={{ fontSize: "32px" }}>
-              And much more...
-            </Text>
-          </Carousel>
+            currSlide={currSlide}
+            className={styles.carousel}
+          />
         </div>
         <Box className={styles.textContainer}>
           {/* {props.kicker && <Kicker>{props.kicker}</Kicker>} */}
           <h3>Singing teachers, vocal coaches, singers...</h3>
           <h1>Say hello to your new best friend.</h1>
+          <div className={styles.mobileCarouselContainer}>
+            <FeatureCarousel
+              onChange={(index) => setCurrSlide(index)}
+              currSlide={currSlide}
+              className={styles.mobileCarousel}
+            />
+          </div>
           <Text style={{ marginBottom: "20px", marginTop: "10px" }} as="p">
             Voicetrainer is a web app that opens up new possibilities for
             collaboration between voice teachers and their students 🧑‍🏫🤝👩‍🎓
@@ -56,10 +39,11 @@ export default function Hero(props) {
           <Text style={{ marginBottom: "30px" }} as="p">
             Whether you teach in-person or online, our platform will equip{" "}
             <strong>you and your students</strong> with a set of tools that make
-            daily teaching and voice workouts easy, fun and effective.
+            daily teaching and vocal workouts easy, fun and effective.
           </Text>
-
-          <MailchimpForm />
+          <div className={styles.signup}>
+            <MailchimpForm />
+          </div>
         </Box>
       </div>
     </section>
@@ -85,3 +69,36 @@ export const query = graphql`
     }
   }
 `
+
+const FeatureCarousel = ({ onChange, currSlide, className }) => (
+  <Carousel
+    autoPlay
+    infiniteLoop
+    className={className}
+    interval={4000}
+    onChange={onChange}
+  >
+    <div className={`card ${currSlide === 0 ? "show" : "hide"}`}>
+      <StaticImage
+        src="../images/session.png"
+        style={{ borderRadius: "20px" }}
+      />
+    </div>
+    <Box className={`card ${currSlide === 1 ? "show" : "hide"}`}>
+      <StaticImage
+        src="../images/sketch.png"
+        style={{ borderRadius: "20px" }}
+      />
+    </Box>
+    <Box className={`card ${currSlide === 2 ? "show" : "hide"}`}>
+      <StaticImage
+        src="../images/timeline.png"
+        style={{ borderRadius: "20px" }}
+      />
+    </Box>
+
+    <Text color="black" as="h3" style={{ fontSize: "32px" }}>
+      And much more...
+    </Text>
+  </Carousel>
+)
