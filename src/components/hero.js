@@ -1,13 +1,12 @@
 import { graphql } from "gatsby"
 import * as styles from "./hero.module.css"
-import { StaticImage } from "gatsby-plugin-image"
-import React, { useState } from "react"
-import { Box, Text } from "./ui"
-import MailchimpForm from "./MailChimpForm"
 import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
 import { Carousel } from "react-responsive-carousel"
+import { StaticImage } from "gatsby-plugin-image"
+import MailchimpForm from "./MailChimpForm"
+import React, { useState } from "react"
+import { Box, Text } from "./ui"
 import "./carousel.css"
-import { style } from "@vanilla-extract/css"
 
 export default function Hero(props) {
   const [currSlide, setCurrSlide] = useState(0)
@@ -78,23 +77,23 @@ const FeatureCarousel = ({ onChange, currSlide, className }) => (
     interval={4000}
     onChange={onChange}
   >
-    <div className={`card ${currSlide === 0 ? "show" : "hide"}`}>
-      <StaticImage
-        src="../images/session.png"
-        style={{ borderRadius: "20px" }}
-      />
+    <div
+      className={`card ${currSlide === 0 ? "show" : "hide"}`}
+      style={{ borderRadius: "20px" }}
+    >
+      <StaticImage src="../images/session.png" />
     </div>
-    <Box className={`card ${currSlide === 1 ? "show" : "hide"}`}>
-      <StaticImage
-        src="../images/sketch.png"
-        style={{ borderRadius: "20px" }}
-      />
+    <Box
+      className={`card ${currSlide === 1 ? "show" : "hide"}`}
+      style={{ borderRadius: "20px" }}
+    >
+      <StaticImage src="../images/sketch.png" />
     </Box>
-    <Box className={`card ${currSlide === 2 ? "show" : "hide"}`}>
-      <StaticImage
-        src="../images/timeline.png"
-        style={{ borderRadius: "20px" }}
-      />
+    <Box
+      className={`card ${currSlide === 2 ? "show" : "hide"}`}
+      style={{ borderRadius: "20px" }}
+    >
+      <StaticImage src="../images/timeline.png" />
     </Box>
 
     <Text color="black" as="h3" style={{ fontSize: "32px" }}>
