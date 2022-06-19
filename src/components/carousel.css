@@ -27,6 +27,7 @@
 
 .carousel {
   border-radius: 20px;
+  pointer-events: none;
 }
 
 .carousel .card {

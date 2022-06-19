@@ -76,6 +76,7 @@ const FeatureCarousel = ({ onChange, currSlide, className }) => (
     className={className}
     interval={4000}
     onChange={onChange}
+    showThumbs={false}
   >
     <div className={`card ${currSlide === 0 ? "show" : "hide"} ${styles.card}`}>
       <StaticImage src="../images/session.png" />
