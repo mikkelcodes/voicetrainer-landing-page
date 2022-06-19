@@ -25,9 +25,15 @@
   display: none;
 }
 
+.carousel {
+  border-radius: 20px;
+}
+
 .carousel .card {
   transition: 0.7s ease opacity;
-  overflow: hidden;
+}
+.carousel .card img {
+  border-radius: 20px;
 }
 
 .carousel ul {

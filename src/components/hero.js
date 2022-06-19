@@ -77,22 +77,13 @@ const FeatureCarousel = ({ onChange, currSlide, className }) => (
     interval={4000}
     onChange={onChange}
   >
-    <div
-      className={`card ${currSlide === 0 ? "show" : "hide"}`}
-      style={{ borderRadius: "20px" }}
-    >
+    <div className={`card ${currSlide === 0 ? "show" : "hide"} ${styles.card}`}>
       <StaticImage src="../images/session.png" />
     </div>
-    <Box
-      className={`card ${currSlide === 1 ? "show" : "hide"}`}
-      style={{ borderRadius: "20px" }}
-    >
+    <Box className={`card ${currSlide === 1 ? "show" : "hide"} ${styles.card}`}>
       <StaticImage src="../images/sketch.png" />
     </Box>
-    <Box
-      className={`card ${currSlide === 2 ? "show" : "hide"}`}
-      style={{ borderRadius: "20px" }}
-    >
+    <Box className={`card ${currSlide === 2 ? "show" : "hide"} ${styles.card}`}>
       <StaticImage src="../images/timeline.png" />
     </Box>
 
